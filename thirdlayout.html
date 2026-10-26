@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Third Layout</title>
+
+    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #343a40;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 8px 25px 35px;
+        }
+        
+        .layout {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            grid-template-rows: 25% 50% 25%;
+            width: 100%;
+            height: calc(100vh - 43px);
+            min-height: 400px;
+        }
+        
+        .section {
+            padding: 5px 12px;
+            font-size: 16px;
+            min-width: 0;
+            min-height: 0;
+        }
+        
+        .navigation {
+            grid-column: 1;
+            grid-row: 1 / 4;
+            background-color: #0d6efd;
+        }
+
+        .header {
+            grid-column: 2;
+            grid-row: 1;
+            background-color: #6c757d;
+        }
+        
+        .article {
+            grid-column: 2;
+            grid-row: 2;
+            background-color: #ffc107;
+        }
+
+        .footer {
+            grid-column: 2;
+            grid-row: 3;
+            background-color: #6c757d;
+        }
+        
+        @media (max-width: 767.98px) {
+            body {
+                padding: 12px;
+            }
+
+            .layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: 75px 120px minmax(220px, 1fr) 100px;
+                height: calc(100vh - 24px);
+                min-height: 500px;
+            }
+
+            .navigation {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .header {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .article {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .footer {
+                grid-column: 1;
+                grid-row: 4;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="layout">
+
+        <nav class="section navigation">
+            Navigation
+        </nav>
+
+        <header class="section header">
+            Header
+        </header>
+
+        <article class="section article">
+            Article
+        </article>
+
+        <footer class="section footer">
+            Footer
+        </footer>
+
+    </main>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+</html>

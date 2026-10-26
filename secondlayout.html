@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Layout - Responsive Bootstrap</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+       
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #34404b;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 10px 18px 16px;
+            box-sizing: border-box;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 17px;
+        }
+        
+        .layout {
+            display: grid;
+            grid-template-columns: 25% 75%;
+            grid-template-rows: 25% 50% 25%;
+            min-height: 0;
+            height: calc(100vh - 70px);
+            overflow: hidden;
+        }
+        
+        .section {
+            padding: 5px 8px;
+            font-size: 16px;
+            min-width: 0;
+            min-height: 0;
+        }
+
+        .navigation {
+            grid-column: 1;
+            grid-row: 1 / 4;
+            background-color: #0d6efd;
+        }
+        
+        .header {
+            grid-column: 2;
+            grid-row: 1;
+            background-color: #6c757d;
+        }
+        
+        .content {
+            grid-column: 2;
+            grid-row: 2;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            min-width: 0;
+            min-height: 0;
+        }
+
+        .article {
+            background-color: #ffc107;
+        }
+
+        .aside {
+            background-color: #198754;
+        }
+        
+        .footer {
+            grid-column: 2;
+            grid-row: 3;
+            background-color: #6c757d;
+        }
+        
+        @media (max-width: 767.98px) {
+            body {
+                padding: 12px;
+            }
+
+            .page-title {
+                font-size: 22px;
+                margin-bottom: 14px;
+            }
+
+            .layout {
+                height: auto;
+                min-height: calc(100vh - 75px);
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 120px minmax(220px, 1fr) 100px;
+                overflow: visible;
+            }
+
+            .navigation {
+                grid-column: 1;
+                grid-row: 1;
+                min-height: 65px;
+            }
+
+            .header {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .content {
+                grid-column: 1;
+                grid-row: 3;
+                grid-template-columns: 2fr 1fr;
+            }
+
+            .footer {
+                grid-column: 1;
+                grid-row: 4;
+            }
+        }
+
+        
+        @media (max-width: 420px) {
+            .content {
+                grid-template-columns: 1fr;
+                grid-template-rows: minmax(160px, 1fr) minmax(110px, auto);
+            }
+
+            .section {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="page-title">Second Layout</h1>
+
+    <main class="layout">
+
+        <nav class="section navigation">
+            Navigation
+        </nav>
+
+        <header class="section header">
+            Header
+        </header>
+
+        <div class="content">
+
+            <article class="section article">
+                Article
+            </article>
+
+            <aside class="section aside">
+                Aside
+            </aside>
+
+        </div>
+
+        <footer class="section footer">
+            Footer
+        </footer>
+
+    </main>
+
+    <!-- Bootstrap 5 JavaScript bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
